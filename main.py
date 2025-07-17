@@ -17,4 +17,10 @@ index = GPTVectorStoreIndex.from_documents(articles)  # txt -> chunks (500 token
 
 query_engine = index.as_query_engine()  # RAG pipeline
 
-print(query_engine.query("Give me a summary of article1."))
+# print(query_engine.query("Give me a summary of article1."))
+
+while (True):
+    prompt = input("💬: ")
+    if (prompt == "end"):
+        exit()
+    print(query_engine.query(prompt))
