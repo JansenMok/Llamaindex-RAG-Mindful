@@ -3,11 +3,11 @@
 RAG chatbot that answers questions on Mindful Substack articles, grounded in the actual article text instead of the model's own knowledge.
 
 ## Setup
-1. Clone the repo
-2. `pip install llama-index llama-index-llms-google-genai llama-index-embeddings-google-genai streamlit`
+1. `$ git clone git@github.com:JansenMok/Llamaindex-RAG-Mindful.git`
+2. `$ pip install llama-index llama-index-llms-google-genai llama-index-embeddings-google-genai streamlit`
 3. Set `GOOGLE_API_KEY` env var
 4. Add article `.txt` files to `articles/`
-5. `streamlit run main.py`
+5. `$ streamlit run main.py`
 
 ## Pipeline
 1. **Chunking** — articles loaded via `SimpleDirectoryReader`, split into ~500-token chunks
