@@ -15,7 +15,7 @@ RAG chatbot that answers questions on Mindful Substack articles, grounded in the
 3. **Retrieval**: vector store index (`GPTVectorStoreIndex`), default top-k similarity search per query
 4. **Generation**: retrieved chunks + question passed to `gemini-2.0-flash` for a grounded answer
 
-## Why Gemini
+## Model Choice
 `gemini-2.0-flash` for generation and `text-embedding-004` for embeddings, both via the `google-genai` SDK, chosen for fast inference and a generous free tier that lets you iterate on retrieval quality without API cost getting in the way.
 ## Interface
 Streamlit web app: type a question, get a grounded answer pulled from the Mindful Articles corpus.
