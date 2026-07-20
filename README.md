@@ -1,2 +1,20 @@
-## Retrieval-augmented generation with Mindful Articles
-Non-hallucinatory RAG protocol utilizing Gemini AI to provide accurate responses to questions related to [Mindful Articles](https://onepointedmind.substack.com/p/all-phenomena-arise-from-the-mind).
+# Llamaindex-RAG-Mindful
+
+RAG chatbot that answers questions on Mindful Substack articles, grounded in the actual article text instead of the model's own knowledge.
+
+## Pipeline
+1. **Chunking** — articles loaded via `SimpleDirectoryReader`, split into ~500-token chunks
+2. **Embedding** — chunks embedded using Google's `text-embedding-004`
+3. **Retrieval** — vector store index (`GPTVectorStoreIndex`), default top-k similarity search per query
+4. **Generation** — retrieved chunks + question passed to `gemini-2.0-flash` for a grounded answer
+
+## Why Gemini
+`gemini-2.0-flash` for generation and `text-embedding-004` for embeddings, both via the `google-genai` SDK — fast inference + generous free tier for iterating on retrieval quality without API cost getting in the way.
+
+## Interface
+Streamlit web app — type a question, get a grounded answer pulled from the Mindful Articles corpus.
+
+## Example
+**Query:** "what does the author say about morning routines?"
+**Retrieved:** top relevant chunks from that article
+**Response:** grounded answer citing the article directly
