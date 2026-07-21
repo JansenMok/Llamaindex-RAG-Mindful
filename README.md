@@ -1,4 +1,4 @@
-# Llamaindex-RAG-Mindful
+# Llamaindex RAG Mindful
 
 RAG chatbot that answers questions on Mindful Substack articles, grounded in the actual article text instead of the model's own knowledge.
 
